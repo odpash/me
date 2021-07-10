@@ -8,7 +8,7 @@ hi_message_हिंदी: hi_message_हिंदी
 hi_message_中國人: hi_message_中國人
 hi_message_Español: hi_message_Español
 hi_message_فارسی: hi_message_فارسی
-button_settings_English: Настройки
+button_settings_English: Настройки 🇬🇧
 button_settings_فارسی: button_settings_فارسی
 button_settings_हिंदी: button_settings_हिंदी
 button_settings_中國人: button_settings_中國人
@@ -20,6 +20,7 @@ param_4_English: Иксы
 param_5_English: Таймер
 param_6_English: Листинг
 param_7_English: Памп
+param_8_English: Контракт
 param_1_فارسی: param_1_فارسی
 param_2_فارسی: param_2_فارسی
 param_3_فارسی: param_3_فارسی
@@ -27,6 +28,7 @@ param_4_فارسی: param_4_فارسی
 param_5_فارسی: param_5_فارسی
 param_6_فارسی: param_6_فارسی
 param_7_فارسی: param_7_فارسی
+param_8_فارسی: param_8_فارسی
 param_1_हिंदी: param_1_हिंदी
 param_2_हिंदी: param_2_हिंदी
 param_3_हिंदी: param_3_हिंदी
@@ -34,6 +36,7 @@ param_4_हिंदी: param_4_हिंदी
 param_5_हिंदी: param_5_हिंदी
 param_6_हिंदी: param_6_हिंदी
 param_7_हिंदी: param_7_हिंदी
+param_8_हिंदी: param_8_हिंदी
 param_1_中國人: param_1_中國人
 param_2_中國人: param_2_中國人
 param_3_中國人: param_3_中國人
@@ -41,6 +44,7 @@ param_4_中國人: param_4_中國人
 param_5_中國人: param_5_中國人
 param_6_中國人: param_6_中國人
 param_7_中國人: param_7_中國人
+param_8_中國人: param_8_中國人
 param_1_Español: param_1_Español
 param_2_Español: param_2_Español
 param_3_Español: param_3_Español
@@ -48,6 +52,7 @@ param_4_Español: param_4_Español
 param_5_Español: param_5_Español
 param_6_Español: param_6_Español
 param_7_Español: param_7_Español
+param_8_Español: param_8_Español
 choose_param_text_English: Выбор параметра
 choose_param_text_فارسی: choose_param_text_فارسی
 choose_param_text_हिंदी: choose_param_text_हिंदी
@@ -58,16 +63,16 @@ edit_فارسی: edit_فارسی
 edit_हिंदी: edit_हिंदी
 edit_中國人: edit_中國人
 edit_Español: edit_Español
-support_button_English: Помощь
-support_button_فارسی: support_button_فارسی
-support_button_हिंदी: support_button_हिंदी
-support_button_中國人: support_button_中國人
-support_button_Español: support_button_Español
-manual_button_English: Мануал
-manual_button_فارسی: manual_button_فارسی
-manual_button_हिंदी: manual_button_हिंदी
-manual_button_中國人: manual_button_中國人
-manual_button_Español: manual_button_Español
+support_button_English: Помощь 🇬🇧
+support_button_فارسی: support_button_فارسی 🇬🇧
+support_button_हिंदी: support_button_हिंदी 🇬🇧
+support_button_中國人: support_button_中國人 🇬🇧
+support_button_Español: support_button_Español 🇬🇧
+manual_button_English: Мануал 🇬🇧
+manual_button_فارسی: manual_button_فارسی 🇬🇧
+manual_button_हिंदी: manual_button_हिंदी 🇬🇧
+manual_button_中國人: manual_button_中國人 🇬🇧
+manual_button_Español: manual_button_Español 🇬🇧
 manual_text_English: Это текст мануала
 manual_text_فارسی: manual_text_فارسی
 manual_text_हिंदी: manual_text_हिंदी
@@ -78,9 +83,9 @@ support_text_فارسی: support_text_فارسی
 support_text_हिंदी: support_text_हिंदी
 support_text_中國人: support_text_中國人
 support_text_Español: support_text_Español
-payment_button_English: Оплата
-pump_button_English: Памп
-listing_button_English: Листинг
+payment_button_English: Оплата 🇬🇧
+pump_button_English: Памп 🇬🇧
+listing_button_English: Листинг 🇬🇧
 payment_button_فارسی: payment_button_فارسی
 pump_button_فارسی: pump_button_فارسی
 listing_button_فارسی: listing_button_فارسی
@@ -105,6 +110,7 @@ i_param_4_English: Ваши иксы
 i_param_5_English: Ваш таймер
 i_param_6_English: Ваш листинг
 i_param_7_English: Ваш памп
+i_param_8_English: Ваш контракт
 i_param_1_فارسی: adress_فارسی
 i_param_2_فارسی: private_key_فارسی
 i_param_3_: sum_فارسی
@@ -112,6 +118,7 @@ i_param_4_فارسی: xx_فارسی
 i_param_5_فارسی: timer_فارسی
 i_param_6_فارسی: listing_فارسی
 i_param_7_فارسی: pamp_فارسی
+i_param_8_فارسی: pamp_فارسی
 i_param_1_हिंदी: adress_हिंदी
 i_param_2_हिंदी: private_key_हिंदी
 i_param_3_हिंदी: sum_हिंदी
@@ -119,6 +126,7 @@ i_param_4_हिंदी: xx_हिंदी
 i_param_5_हिंदी: timer_हिंदी
 i_param_6_हिंदी: listing_हिंदी
 i_param_7_हिंदी: pamp_हिंदी
+i_param_8_हिंदी: pamp_हिंदी
 i_param_1_中國人: adress_中國人
 i_param_2_中國人: private_key_中國人
 i_param_3_中國人: sum_中國人
@@ -126,6 +134,7 @@ i_param_4_中國人: xx_中國人
 i_param_5_中國人: timer_中國人
 i_param_6_中國人: listing_中國人
 i_param_7_中國人: pamp_中國人
+i_param_8_中國人: pamp_中國人
 i_param_1_Español: i_param_1_Español
 i_param_2_Español: i_param_2_Español
 i_param_3_Español: i_param_3_Español
@@ -133,6 +142,7 @@ i_param_4_Español: i_param_4_Español
 i_param_5_Español: i_param_5_Español
 i_param_6_Español: i_param_6_Español
 i_param_7_Español: i_param_7_Español
+i_param_8_Español: i_param_7_Español
 change_text_English: Введите новое значение параметра:
 change_text_فارسی: change_text_فارسی
 change_text_हिंदी: change_text_हिंदी
@@ -198,3 +208,23 @@ pump_process_text_فارسی: pump_process_text_فارسی
 pump_process_text_हिंदी: pump_process_text_हिंदी
 pump_process_text_中國人: pump_process_text_中國人
 pump_process_text_Español: pump_process_text_Español
+r_btn_English: Rychnoy
+r_btn_فارسی: r_btn_فارسی
+r_btn_हिंदी: r_btn__ंदी
+r_btn_中國人: r_btn_中國人
+r_btn_Español: r_btn_Español
+x_btn_English: IXSI (X)
+x_btn_فارسی: x_btn_فارسی
+x_btn_हिंदी: x_btn__ंदी
+x_btn_中國人: x_btn_中國人
+x_btn_Español: x_btn_Español
+t_btn_English: Timer
+t_btn_فارسی: t_btn_فارسی
+t_btn_हिंदी: t_btn__ंदी
+t_btn_中國人: t_btn_中國人
+t_btn_Español: t_btn_Español
+none_English: Ошибка. Ложный параметр.
+none_فارسی: none_فارسی
+none_हिंदी: none__ंदी
+none_中國人: none_中國人
+none_Español: none_Español
