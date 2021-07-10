@@ -1,0 +1,200 @@
+NAME_lang1: English 🇬🇧
+NAME_lang2: فارسی 🇮🇷
+NAME_lang3: हिंदी 🇮🇳
+NAME_lang4: 中國人 🇨🇳
+NAME_lang5: Español 🇪🇸
+hi_message_English: Это приветственное сообщение
+hi_message_हिंदी: hi_message_हिंदी
+hi_message_中國人: hi_message_中國人
+hi_message_Español: hi_message_Español
+hi_message_فارسی: hi_message_فارسی
+button_settings_English: Настройки
+button_settings_فارسی: button_settings_فارسی
+button_settings_हिंदी: button_settings_हिंदी
+button_settings_中國人: button_settings_中國人
+button_settings_Español: button_settings_Español
+param_1_English: Приватный ключ
+param_2_English: Адрес
+param_3_English: Сумма
+param_4_English: Иксы
+param_5_English: Таймер
+param_6_English: Листинг
+param_7_English: Памп
+param_1_فارسی: param_1_فارسی
+param_2_فارسی: param_2_فارسی
+param_3_فارسی: param_3_فارسی
+param_4_فارسی: param_4_فارسی
+param_5_فارسی: param_5_فارسی
+param_6_فارسی: param_6_فارسی
+param_7_فارسی: param_7_فارسی
+param_1_हिंदी: param_1_हिंदी
+param_2_हिंदी: param_2_हिंदी
+param_3_हिंदी: param_3_हिंदी
+param_4_हिंदी: param_4_हिंदी
+param_5_हिंदी: param_5_हिंदी
+param_6_हिंदी: param_6_हिंदी
+param_7_हिंदी: param_7_हिंदी
+param_1_中國人: param_1_中國人
+param_2_中國人: param_2_中國人
+param_3_中國人: param_3_中國人
+param_4_中國人: param_4_中國人
+param_5_中國人: param_5_中國人
+param_6_中國人: param_6_中國人
+param_7_中國人: param_7_中國人
+param_1_Español: param_1_Español
+param_2_Español: param_2_Español
+param_3_Español: param_3_Español
+param_4_Español: param_4_Español
+param_5_Español: param_5_Español
+param_6_Español: param_6_Español
+param_7_Español: param_7_Español
+choose_param_text_English: Выбор параметра
+choose_param_text_فارسی: choose_param_text_فارسی
+choose_param_text_हिंदी: choose_param_text_हिंदी
+choose_param_text_中國人: choose_param_text_中國人
+choose_param_text_Español: choose_param_text_Español
+edit_English: Изменить
+edit_فارسی: edit_فارسی
+edit_हिंदी: edit_हिंदी
+edit_中國人: edit_中國人
+edit_Español: edit_Español
+support_button_English: Помощь
+support_button_فارسی: support_button_فارسی
+support_button_हिंदी: support_button_हिंदी
+support_button_中國人: support_button_中國人
+support_button_Español: support_button_Español
+manual_button_English: Мануал
+manual_button_فارسی: manual_button_فارسی
+manual_button_हिंदी: manual_button_हिंदी
+manual_button_中國人: manual_button_中國人
+manual_button_Español: manual_button_Español
+manual_text_English: Это текст мануала
+manual_text_فارسی: manual_text_فارسی
+manual_text_हिंदी: manual_text_हिंदी
+manual_text_中國人: manual_text_中國人
+manual_text_Español: manual_text_Español
+support_text_English: Это текст поддержки
+support_text_فارسی: support_text_فارسی
+support_text_हिंदी: support_text_हिंदी
+support_text_中國人: support_text_中國人
+support_text_Español: support_text_Español
+payment_button_English: Оплата
+pump_button_English: Памп
+listing_button_English: Листинг
+payment_button_فارسی: payment_button_فارسی
+pump_button_فارسی: pump_button_فارسی
+listing_button_فارسی: listing_button_فارسی
+payment_button_हिंदी: payment_button_हिंदी
+pump_button_हिंदी: pump_button_हिंदी
+listing_button_हिंदी: listing_button_हिंदी
+payment_button_中國人: payment_button_中國人
+pump_button_中國人: pump_button_中國人
+listing_button_中國人: listing_button_中國人
+payment_button_Español: payment_button_Español
+pump_button_Español: pump_button_Español
+listing_button_Español: listing_button_Español
+payment_text_English: Это текст оплаты
+payment_text_فارسی: payment_text_فارسی
+payment_text_हिंदी: payment_text_हिंदी
+payment_text_中國人: payment_text_中國人
+payment_text_Español: payment_text_Español
+i_param_1_English: Ваш ключ
+i_param_2_English: Ваш адрес
+i_param_3_English: Ваша сумма
+i_param_4_English: Ваши иксы
+i_param_5_English: Ваш таймер
+i_param_6_English: Ваш листинг
+i_param_7_English: Ваш памп
+i_param_1_فارسی: adress_فارسی
+i_param_2_فارسی: private_key_فارسی
+i_param_3_: sum_فارسی
+i_param_4_فارسی: xx_فارسی
+i_param_5_فارسی: timer_فارسی
+i_param_6_فارسی: listing_فارسی
+i_param_7_فارسی: pamp_فارسی
+i_param_1_हिंदी: adress_हिंदी
+i_param_2_हिंदी: private_key_हिंदी
+i_param_3_हिंदी: sum_हिंदी
+i_param_4_हिंदी: xx_हिंदी
+i_param_5_हिंदी: timer_हिंदी
+i_param_6_हिंदी: listing_हिंदी
+i_param_7_हिंदी: pamp_हिंदी
+i_param_1_中國人: adress_中國人
+i_param_2_中國人: private_key_中國人
+i_param_3_中國人: sum_中國人
+i_param_4_中國人: xx_中國人
+i_param_5_中國人: timer_中國人
+i_param_6_中國人: listing_中國人
+i_param_7_中國人: pamp_中國人
+i_param_1_Español: i_param_1_Español
+i_param_2_Español: i_param_2_Español
+i_param_3_Español: i_param_3_Español
+i_param_4_Español: i_param_4_Español
+i_param_5_Español: i_param_5_Español
+i_param_6_Español: i_param_6_Español
+i_param_7_Español: i_param_7_Español
+change_text_English: Введите новое значение параметра:
+change_text_فارسی: change_text_فارسی
+change_text_हिंदी: change_text_हिंदी
+change_text_中國人: change_text_中國人
+change_text_Español: change_text_Español
+ok_text_English: Значение было успешно изменено!
+ok_text_فارسی: ok_text_فارسی
+ok_text_हिंदी: ok_text_हिंदी
+ok_text_中國人: ok_text_中國人
+ok_text_Español: ok_text_Español
+yes_text_English: Да
+yes_text_فارسی: yes_text_فارسی
+yes_text_हिंदी: yes_text_हिंदी
+yes_text_中國人: yes_text_中國人
+yes_text_Español: yes_text_Español
+no_text_English: Нет
+no_text_فارسی: no_text_فارسی
+no_text_हिंदी: no_text_हिंदी
+no_text_中國人: no_text_中國人
+no_text_Español: no_text_Español
+listing1_text_English: Ваши параметры для участия в листинге сейчас:
+listing1_text_فارسی: listing1_text_فارسی
+lisiting1_text_हिंदी: listing1_text_हिंदी
+listing1_text_中國人: listing1_text_中國人
+listing1_text_Español: listing1_text_Español
+pamp1_text_English: Ваши параметры для участия в пампе сейчас:
+pamp1_text_فارسی: pamp1_text_فارسی
+pamp1_text_हिंदी: pamp1_text_हिंदी
+pamp1_text_中國人: pamp1_text_中國人
+pamp1_text_Español: pamp1_text_Español
+minus_info_English: Поменяйте настройки!
+minus_info_فارسی: minus_info_فارسی
+minus_info_हिंदी: minus_info_ंदी
+minus_info_中國人: minus_info_中國人
+minus_info_Español: minus_info_Español
+start_btn_English: STAAART!
+start_btn_فارسی: start_btn_فارسی
+start_btn_हिंदी: start_btn__ंदी
+start_btn_中國人: start_btn_中國人
+start_btn_Español: start_btn_Español
+sell_btn_English: Продать
+sell_btn_فارسی: sell_btn_فارسی
+sell_btn_हिंदी: sell_btn__ंदी
+sell_btn_中國人: sell_btn_中國人
+sell_btn_Español: sell_btn_Español
+snip_text_English: Запуск сниппинга
+snip_text_فارسی: snip_text_فارسی
+snip_text_हिंदी: snip_text_हिंदी
+snip_text_中國人: snip_text_中國人
+snip_text_Español: snip_text_Español
+snip_prestart_text_English: Текст над кнопкой старт в снипе
+snip_prestart_text_فارسی: snip_prestart_text_فارسی
+snip_prestart_text_हिंदी: snip_prestart_text_हिंदी
+snip_prestart_text_中國人: snip_prestart_text_中國人
+snip_prestart_text_Español: snip_prestart_text_Español
+pump_prestart_text_English: Введите контракт
+pump_prestart_text_فارسی: pump_prestart_text_فارسی
+pump_prestart_text_हिंदी: pump_prestart_text_हिंदी
+pump_prestart_text_中國人: pump_prestart_text_中國人
+pump_prestart_text_Español: pump_prestart_text_Español
+pump_process_text_English: Текст во время пампов
+pump_process_text_فارسی: pump_process_text_فارسی
+pump_process_text_हिंदी: pump_process_text_हिंदी
+pump_process_text_中國人: pump_process_text_中國人
+pump_process_text_Español: pump_process_text_Español
