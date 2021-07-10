@@ -4,6 +4,7 @@ from aiogram import types
 import os
 import re
 
+
 # coding utf-8
 def parse_txt_file(filename):
     f = open(filename, mode='r', encoding='UTF-8').read().split('\n')
@@ -17,8 +18,40 @@ def parse_txt_file(filename):
     return sl
 
 
-token = 'ХУЙ ВАМ А НЕ ТОКЕН'  # Bot username: @Denis_D_testbot
+token = 'ЛУЛ'  # Bot username: olegpash_profile_bot
 bot = telebot.TeleBot(token)
+
+
+@bot.callback_query_handler(func=lambda
+        c: 'ch_t_' in c.data or 'ch_r_' in c.data or 'ch_x_' in c.data)
+def process_callback_button5(callback_query: types.CallbackQuery):
+    user_cmd = callback_query.data
+    config_data = parse_txt_file('config.txt')
+    lang = get_lang(user_cmd)
+    if '_p_' in user_cmd:
+        command = 'pamp'
+    else:
+        command = 'listing'
+    if '_t_' in user_cmd:
+        command_2 = 't_btn_'
+    elif '_r_' in user_cmd:
+        command_2 = 'r_btn_'
+    else:
+        command_2 = 'x_btn_'
+    command_2 += lang
+    if os.path.exists(str(callback_query.from_user.id) + '.txt'):
+        print('+')
+        c_f = open(str(callback_query.from_user.id) + '.txt', encoding='UTF-8').read().split('\n')
+        for i in range(len(c_f)):
+            if command in c_f[i]:
+                c_f[i] = c_f[i].split(': ')[0] + ': ' + config_data[command_2]
+                break
+        with open(str(callback_query.from_user.id) + '.txt', 'w', encoding='UTF-8') as file:
+            for i in c_f:
+                file.write(i + '\n')
+        file.close()
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, config_data[f'ok_text_{lang}'])
 
 
 @bot.callback_query_handler(func=lambda
@@ -48,6 +81,7 @@ def start_pump(message):
                                               callback_data=f'sell_btn_p_{current_language}'))
         bot.send_message(message.chat.id, answer, reply_markup=[markup])
 
+
 @bot.callback_query_handler(func=lambda
         c: 'start_btn_' in c.data)
 def process_callback_button5(callback_query: types.CallbackQuery):
@@ -61,8 +95,6 @@ def process_callback_button5(callback_query: types.CallbackQuery):
                                               callback_data=f'sell_btn_l_{current_language}'))
         bot.answer_callback_query(callback_query.id)
         bot.send_message(callback_query.from_user.id, answer, reply_markup=[markup])
-
-
 
 
 def get_lang(user_cmd):
@@ -112,27 +144,53 @@ def process_callback_button4(callback_query: types.CallbackQuery):
         bot.send_message(callback_query.from_user.id, answer)
 
 
-
 @bot.callback_query_handler(func=lambda
         c: 'edit' in c.data)
 def process_callback_button2(callback_query: types.CallbackQuery):
     user_cmd = callback_query.data
+    print(user_cmd)
     config_data = parse_txt_file('config.txt')
     current_language = get_lang(user_cmd)
     answer = config_data[f'change_text_{current_language}']
-    f = open(str(callback_query.from_user.id) + '.txt', encoding='UTF-8').read().split('\n')
-    print(f)
-    f[-1] = 'status: ' + user_cmd[0]
-    file_new = open(str(callback_query.from_user.id) + '.txt', 'w', encoding='UTF-8')
-    for i in f:
-        file_new.write(i + '\n')
-    bot.answer_callback_query(callback_query.id)
-    bot.send_message(callback_query.from_user.id, answer)
+    if '7_edit' not in user_cmd and '6_edit' not in user_cmd:
+        f = open(str(callback_query.from_user.id) + '.txt', encoding='UTF-8').read().split('\n')
+        print(f)
+        f[-1] = 'status: ' + user_cmd[0]
+        file_new = open(str(callback_query.from_user.id) + '.txt', 'w', encoding='UTF-8')
+        for i in f:
+            file_new.write(i + '\n')
+        file_new.close()
+        bot.answer_callback_query(callback_query.id)
+        bot.send_message(callback_query.from_user.id, answer)
+    else:
+        if '7_edit' in user_cmd:
+            markup = types.InlineKeyboardMarkup()
+            markup.add(types.InlineKeyboardButton(config_data[f't_btn_{current_language}'],
+                                                  callback_data=f'ch_t_p_btn_{current_language}'),
+                       )
+            markup.add(types.InlineKeyboardButton(config_data[f'r_btn_{current_language}'],
+                                                  callback_data=f'ch_r_p_btn_{current_language}'),
+                       )
+            markup.add(types.InlineKeyboardButton(config_data[f'x_btn_{current_language}'],
+                                                  callback_data=f'ch_x_p_btn_{current_language}'),
+                       )
+            bot.answer_callback_query(callback_query.id)
+            bot.send_message(callback_query.from_user.id, answer, reply_markup=[markup])
+        else:
+            markup = types.InlineKeyboardMarkup()
+            markup.add(types.InlineKeyboardButton(config_data[f'r_btn_{current_language}'],
+                                                  callback_data=f'ch_r_l_btn_{current_language}'),
+                       )
+            markup.add(types.InlineKeyboardButton(config_data[f'x_btn_{current_language}'],
+                                                  callback_data=f'ch_x_l_btn_{current_language}'),
+                       )
+            bot.answer_callback_query(callback_query.id)
+            bot.send_message(callback_query.from_user.id, answer, reply_markup=[markup])
 
 
 @bot.callback_query_handler(func=lambda
         c: '1_btn' in c.data or '2_btn' in c.data or '3_btn' in c.data or '4_btn' in c.data or '5_btn'
-           in c.data or '6_btn' in c.data or '7_btn' in c.data)
+           in c.data or '6_btn' in c.data or '7_btn' in c.data or '8_btn' in c.data)
 def process_callback_button1(callback_query: types.CallbackQuery):
     user_cmd = callback_query.data
     current_language = get_lang(user_cmd)
@@ -145,12 +203,14 @@ def process_callback_button1(callback_query: types.CallbackQuery):
             f.write('timer: None\n')
             f.write('listing: None\n')
             f.write('pamp: None\n')
+            f.write('contract: None\n')
             f.write(f'lang: {current_language}\n')
             f.write('status: 0')
+        f.close()
     user_data = parse_txt_file(str(callback_query.from_user.id) + '.txt')
     config_data = parse_txt_file('config.txt')
     params_in_list = [user_data['private_key'], user_data['adress'], user_data['sum'], user_data['xx'],
-                      user_data['timer'], user_data['listing'], user_data['pamp']]
+                      user_data['timer'], user_data['listing'], user_data['pamp'], user_data['contract']]
     answer = config_data[f'i_param_{user_cmd[0]}_{current_language}'] + ': ' + params_in_list[int(user_cmd[0]) - 1]
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton(config_data[f'edit_{current_language}'],
@@ -172,10 +232,8 @@ def initialize(message):
         itembtnc = types.KeyboardButton(data['NAME_lang3'])
         itembtnd = types.KeyboardButton(data['NAME_lang4'])
         itembtne = types.KeyboardButton(data['NAME_lang5'])
-        markup.row(itembtna)
-        markup.row(itembtnb)
-        markup.row(itembtnc)
-        markup.row(itembtnd)
+        markup.row(itembtna, itembtnb)
+        markup.row(itembtnc, itembtnd)
         markup.row(itembtne)
         bot.send_message(message.chat.id, 'Choose language:', reply_markup=[markup])
     ################# Screen #2 part 1 (hi message + buttons) ###############
@@ -191,25 +249,23 @@ def initialize(message):
         btn_payment = types.KeyboardButton(data[f'payment_button_{message.text}'])
         btn_pump = types.KeyboardButton(data[f'pump_button_{message.text}'])
         btn_listing = types.KeyboardButton(data[f'listing_button_{message.text}'])
-        markup.row(btn_settings)
-        markup.row(btn_manual)
-        markup.row(btn_support)
-        markup.row(btn_payment)
-        markup.row(btn_pump)
-        markup.row(btn_listing)
+        markup.row(btn_listing, btn_pump)
+        markup.row(btn_settings, btn_manual, btn_support, btn_payment)
         bot.send_message(message.chat.id, answer, reply_markup=[markup])
-######### listing and pump ############
-    elif message.text == data['param_6_فارسی'] or message.text == data['param_6_English'] or message.text == data[
-        'param_6_हिंदी'] or message.text == data['param_6_中國人'] or message.text == data['param_6_Español']:
-        if message.text == data['param_6_فارسی']:
+    ######### listing and pump ############
+    elif message.text == data['listing_button_English'] or message.text == data[
+        'listing_button_فارسی'] or message.text == data[
+        'listing_button_हिंदी'] or message.text == data['listing_button_中國人'] or message.text == data[
+        'listing_button_Español']:
+        if message.text == data['listing_button_فارسی']:
             lang = 'فارسی'
-        elif message.text == data['param_6_English']:
+        elif message.text == data['listing_button_English']:
             lang = 'English'
-        elif message.text == data['param_6_हिंदी']:
+        elif message.text == data['listing_button_हिंदी']:
             lang = 'हिंदी'
-        elif message.text == data['param_6_中國人']:
+        elif message.text == data['listing_button_中國人']:
             lang = '中國人'
-        elif message.text == data['param_6_Español']:
+        elif message.text == data['listing_button_Español']:
             lang = 'Español'
         else:
             lang = 'error'
@@ -227,17 +283,19 @@ def initialize(message):
         bot.send_message(message.chat.id, answer, reply_markup=[markup])
 
 
-    elif message.text == data['param_7_فارسی'] or message.text == data['param_7_English'] or message.text == data[
-        'param_7_हिंदी'] or message.text == data['param_7_中國人'] or message.text == data['param_7_Español']:
-        if message.text == data['param_7_فارسی']:
-            lang = 'فارسی'
-        elif message.text == data['param_7_English']:
+    elif message.text == data['pump_button_English'] or message.text == data['pump_button_فارسی'] or message.text == \
+            data[
+                'pump_button_हिंदी'] or message.text == data['pump_button_中國人'] or message.text == data[
+        'pump_button_Español']:
+        if message.text == data['pump_button_English']:
             lang = 'English'
-        elif message.text == data['param_7_हिंदी']:
+        elif message.text == data['pump_button_فارسی']:
+            lang = 'فارسی'
+        elif message.text == data['pump_button_हिंदी']:
             lang = 'हिंदी'
-        elif message.text == data['param_7_中國人']:
+        elif message.text == data['pump_button_中國人']:
             lang = '中國人'
-        elif message.text == data['param_7_Español']:
+        elif message.text == data['pump_button_Español']:
             lang = 'Español'
         else:
             lang = 'error'
@@ -255,7 +313,7 @@ def initialize(message):
         bot.send_message(message.chat.id, answer, reply_markup=[markup])
 
 
-##########################!!!!!############################
+    ##########################!!!!!############################
     #############  Screen #3 part 1 (Manual) ################
     elif message.text == data['manual_button_English']:
         answer = data['manual_text_English']
@@ -311,6 +369,7 @@ def initialize(message):
     elif message.text == data['button_settings_English'] or message.text == data[
         'button_settings_فارسی'] or message.text == data['button_settings_हिंदी'] or message.text == \
             data['button_settings_中國人'] or message.text == data['button_settings_Español']:
+        print(message.text)
         if message.text == data['button_settings_English']:
             lang_now = 'English'
         elif message.text == data['button_settings_فارسی']:
@@ -333,11 +392,13 @@ def initialize(message):
         markup.add(types.InlineKeyboardButton(data[f'param_5_{lang_now}'], callback_data=f'5_btn_{lang_now}'),
                    types.InlineKeyboardButton(data[f'param_6_{lang_now}'], callback_data=f'6_btn_{lang_now}')
                    )
-        markup.add(types.InlineKeyboardButton(data[f'param_7_{lang_now}'], callback_data=f'7_btn_{lang_now}'), )
+        markup.add(types.InlineKeyboardButton(data[f'param_7_{lang_now}'], callback_data=f'7_btn_{lang_now}'),
+                   types.InlineKeyboardButton(data[f'param_8_{lang_now}'], callback_data=f'8_btn_{lang_now}'), )
         answer = data[f'choose_param_text_{lang_now}']
         bot.send_message(message.chat.id, answer, reply_markup=[markup])
     elif re.search(r'0x[a-fA-F0-9]{40}', message.text) is not None:
         start_pump(message)
+
     else:
         if os.path.exists(str(message.chat.id) + '.txt'):
             print('+')
@@ -358,7 +419,18 @@ def initialize(message):
                         if 'lang' in i:
                             language_now = i.split(': ')[1]
                         f.write(i + '\n')
+                    f.close()
                 bot.send_message(message.chat.id, data[f'ok_text_{language_now}'])
+                return
+        try:
+
+            if os.path.exists(str(message.from_user.id) + '.txt'):
+                f = parse_txt_file(str(message.from_user.id) + '.txt')['lang']
+                bot.send_message(message.chat.id, data[f'none_{f}'])
+                return
+        except:
+            pass
+        bot.send_message(message.chat.id, 'Unknown command. Please, write /start')
 
 
 bot.polling()
