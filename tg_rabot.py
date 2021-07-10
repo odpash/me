@@ -17,7 +17,7 @@ def parse_txt_file(filename):
     return sl
 
 
-token = '1851044696:AAHFM9l6hSTlX30uO09T9Ro_2DSLBiWCEt4'  # Bot username: olegpash_profile_bot
+token = 'ХУЙ ВАМ А НЕ ТОКЕН'  # Bot username: @Denis_D_testbot
 bot = telebot.TeleBot(token)
 
 
