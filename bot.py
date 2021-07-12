@@ -4,6 +4,7 @@ from aiogram import types
 import os
 import re
 
+
 all_keys = {'0': 'private_key',
             '1': 'adress',
             '2': 'sum',
@@ -14,6 +15,17 @@ all_keys = {'0': 'private_key',
             '7': 'contract',
             '8': 'lang',
             '9': 'status'}
+
+user_start_info = {"private_key": "None",
+                   "adress": "None",
+                   "sum": "None",
+                   "xx": "None",
+                   "timer": "None",
+                   "listing": "None",
+                   "pamp": "None",
+                   "contract": "None",
+                   "lang": "",
+                   "status": "0"}
 
 
 # coding utf-8
@@ -29,9 +41,9 @@ def parse_txt_file(filename):
                 pass
         return sl
     else:
-        return json.loads(open(filename, mode='r', encoding='UTF-8').read().replace("'", '"'))
+        return json.load(open(filename, encoding='UTF-8'))
 
-
+config_data = parse_txt_file('config.txt')
 token = '1851044696:AAHFM9l6hSTlX30uO09T9Ro_2DSLBiWCEt4'  # Bot username: olegpash_profile_bot
 bot = telebot.TeleBot(token)
 
@@ -39,8 +51,9 @@ bot = telebot.TeleBot(token)
 @bot.callback_query_handler(func=lambda
         c: 'ch_t_' in c.data or 'ch_r_' in c.data or 'ch_x_' in c.data)
 def process_callback_button5(callback_query: types.CallbackQuery):
+
     user_cmd = callback_query.data
-    config_data = parse_txt_file('config.txt')
+
     lang = get_lang(user_cmd)
     if '_p_' in user_cmd:
         command = 'pamp'
@@ -54,12 +67,9 @@ def process_callback_button5(callback_query: types.CallbackQuery):
         command_2 = 'x_btn_'
     command_2 += lang
     if os.path.exists(str(callback_query.from_user.id) + '.txt'):
-
         c_f = parse_txt_file(str(callback_query.from_user.id) + '.txt')
         c_f[command] = config_data[command_2]
-        with open(str(callback_query.from_user.id) + '.txt', 'w', encoding='UTF-8') as file:
-            file.write(str(c_f))
-        file.close()
+        json.dump(c_f, open(str(callback_query.from_user.id) + '.txt', 'w'))
         bot.answer_callback_query(callback_query.id)
         bot.send_message(callback_query.from_user.id, config_data[f'ok_text_{lang}'])
 
@@ -68,7 +78,6 @@ def process_callback_button5(callback_query: types.CallbackQuery):
         c: 'sell_btn_' in c.data)
 def process_callback_button5(callback_query: types.CallbackQuery):
     user_cmd = callback_query.data
-    config_data = parse_txt_file('config.txt')
     answer = 'НАЖАТА КНОПКА ПРОДАТЬ!'
     bot.answer_callback_query(callback_query.id)
     bot.send_message(callback_query.from_user.id, answer)
@@ -84,7 +93,6 @@ def start_pump(message):
             if 'lang' in i:
                 current_language = i.split(': ')[1]
                 break
-        config_data = parse_txt_file('config.txt')
         answer = config_data[f'pump_process_text_{current_language}']
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton(config_data[f'sell_btn_{current_language}'],
@@ -96,7 +104,6 @@ def start_pump(message):
         c: 'start_btn_' in c.data)
 def process_callback_button5(callback_query: types.CallbackQuery):
     user_cmd = callback_query.data
-    config_data = parse_txt_file('config.txt')
     current_language = get_lang(user_cmd)
     if '_l_' in user_cmd:  # ЛИСТИНГ
         answer = config_data[f'snip_text_{current_language}']
@@ -127,7 +134,6 @@ def get_lang(user_cmd):
         c: '-_l' in c.data or '-_p' in c.data)
 def process_callback_button3(callback_query: types.CallbackQuery):
     user_cmd = callback_query.data
-    config_data = parse_txt_file('config.txt')
     current_language = get_lang(user_cmd)
     answer = config_data[f'minus_info_{current_language}']
     bot.answer_callback_query(callback_query.id)
@@ -138,7 +144,6 @@ def process_callback_button3(callback_query: types.CallbackQuery):
         c: '+_l' in c.data or '+_p' in c.data)
 def process_callback_button4(callback_query: types.CallbackQuery):
     user_cmd = callback_query.data
-    config_data = parse_txt_file('config.txt')
     current_language = get_lang(user_cmd)
     if '+_l' in user_cmd:  # ЛИСТИНГ
         answer = config_data[f'snip_prestart_text_{current_language}']
@@ -157,15 +162,12 @@ def process_callback_button4(callback_query: types.CallbackQuery):
         c: 'edit' in c.data)
 def process_callback_button2(callback_query: types.CallbackQuery):
     user_cmd = callback_query.data
-    config_data = parse_txt_file('config.txt')
     current_language = get_lang(user_cmd)
     answer = config_data[f'change_text_{current_language}']
     if '7_edit' not in user_cmd and '6_edit' not in user_cmd:
         f = parse_txt_file(str(callback_query.from_user.id) + '.txt')
         f['status'] = user_cmd[0]
-        file_new = open(str(callback_query.from_user.id) + '.txt', 'w', encoding='UTF-8')
-        file_new.write(str(f))
-        file_new.close()
+        json.dump(f, open(str(callback_query.from_user.id) + '.txt', 'w'))
         bot.answer_callback_query(callback_query.id)
         bot.send_message(callback_query.from_user.id, answer)
     else:
@@ -201,20 +203,9 @@ def process_callback_button1(callback_query: types.CallbackQuery):
     user_cmd = callback_query.data
     current_language = get_lang(user_cmd)
     if not os.path.exists(str(callback_query.from_user.id) + '.txt'):
-        with open(str(callback_query.from_user.id) + '.txt', 'w', encoding='UTF-8') as f:
-            f.write(str({"private_key": "None",
-                         "adress": "None",
-                         "sum": "None",
-                         "xx": "None",
-                         "timer": "None",
-                         "listing": "None",
-                         "pamp": "None",
-                         "contract": "None",
-                         "lang": current_language,
-                         "status": "0"}))
-        f.close()
+        user_start_info['lang'] = current_language
+        json.dump(user_start_info, open(str(callback_query.from_user.id) + '.txt', 'w'))
     user_data = parse_txt_file(str(callback_query.from_user.id) + '.txt')
-    config_data = parse_txt_file('config.txt')
     params_in_list = [user_data['private_key'], user_data['adress'], user_data['sum'], user_data['xx'],
                       user_data['timer'], user_data['listing'], user_data['pamp'], user_data['contract']]
     answer = config_data[f'i_param_{user_cmd[0]}_{current_language}'] + ': ' + params_in_list[int(user_cmd[0]) - 1]
@@ -229,7 +220,7 @@ def process_callback_button1(callback_query: types.CallbackQuery):
 @bot.message_handler()
 def initialize(message):
     print(message.text)
-    data = parse_txt_file('config.txt')
+    data = config_data
     ################### Screen #1 (start) #################
     if message.text == '/start':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -410,11 +401,7 @@ def initialize(message):
             if f['status'] != '0':
                 f[all_keys[str(int(f['status']) - 1)]] = message.text
                 f['status'] = '0'
-                a = str(f)
-                print(a)
-                file = open(str(message.from_user.id) + '.txt', mode='w', encoding='UTF-8')
-                file.write(a)
-                file.close()
+                json.dump(f, open(str(message.from_user.id) + '.txt', 'w'))
                 bot.send_message(message.chat.id, data[f'ok_text_{f["lang"]}'])
             return
         try:
